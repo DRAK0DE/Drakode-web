@@ -1,0 +1,38 @@
+#skills {
+  height: 80vh;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  min-height: 483px;
+  min-width: 1062px;
+}
+
+.skills__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skills__ability {
+  border: solid white 4px;
+  border-radius: 15px;
+  display: flex;
+  padding: 5%;
+}
+
+.skills__img {
+  width: 125px;
+}
+
+.skills__title {
+  color: #FFFFFF;
+}

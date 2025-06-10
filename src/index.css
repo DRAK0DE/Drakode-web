@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root{
+  --paddingLateral: 0 6.25%;
+
+  --primaryColor:#ffffff;
+
+  --primaryfont:"Montserrat", serif;
+
+  --paragraphSize:calc(1rem + 5px);
+  --titleSize:calc(3rem + 5px);
+}
+
+* {
+  margin     : 0;
+  padding    : 0;
+  box-sizing : border-box;
+  font-family: var(--primaryfont);
+  color: var(--primaryColor);
+}
+
+body {
+  background: linear-gradient(to bottom right, #0B0B0B 12%, #131314);
+  height    : 100vh;
+}

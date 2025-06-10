@@ -1,0 +1,51 @@
+#contact {
+    height: 80vh;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 8%;
+}
+
+.contact__title {
+    font-size: 50px;
+    padding-bottom: 0.5%;
+}
+
+.contact__hr{
+    border: 1px white solid;
+    border-radius: 40px;
+}
+
+.contact__content {
+    margin-top: 15px;
+    height: 78%;
+    display: flex;
+    gap: 10%;
+}
+
+.contact__group {
+    display: flex;
+    width: 40%;
+    gap: 10%;
+}
+
+.contact__data {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__item {
+    display: flex;
+    align-items: center;
+}
+
+.contact__link {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    font-size: 21px;
+    font-weight: 300;
+}

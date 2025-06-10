@@ -1,0 +1,60 @@
+#home {
+    height         : 80vh;
+    padding        : var(--paddingLateral);
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    justify-content: center;
+}
+
+.home__section-1 {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    gap            : 8%;
+    height         : 80%;
+    width          : 100%;
+}
+
+.home__paragraph {
+    font-size: calc(var(--paragraphSize) - 5px);
+    width    : 263px;
+}
+
+.home__paragraph-2 {
+    text-align: end;
+}
+
+.home__logo-circle {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    height         : clamp(300px, 443px, 470px);
+    width          : clamp(300px, 443px, 470px);
+    border         : 37px white solid;
+    border-radius  : 50%;
+    box-shadow     : 0 0 25px 1px white, inset 0 0 25px 1px white;
+}
+
+.home__Drakode {
+    height: 105%;
+    width : 105%;
+}
+
+.home__section-2 {
+    text-align: center;
+}
+
+.home__profession {
+    font-size     : var(--paragraphSize);
+    text-transform: uppercase;
+    font-weight   : 900;
+    line-height   : 1;
+}
+
+.home__nickname {
+    font-size     : var(--titleSize);
+    text-transform: uppercase;
+    font-weight   : 900;
+    line-height   : 1;
+}
