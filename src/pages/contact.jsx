@@ -30,21 +30,21 @@ export default function Contact() {
           </span>
           <span className="contact__data">
             <span className="contact__item">
-              <a className="contact__link" href="https://www.behance.net/drakode">
+              <a className="contact__link" href="https://www.behance.net/drakode" target='_blank'>
                 <img src="icons/enlaceExterno.svg" alt="enlace externo" /> Behance
               </a>
             </span>
             <span className="contact__item">
-              <a className="contact__link" href="https://www.instagram.com/_daniel__pedroza_/">
+              <a className="contact__link" href="https://www.instagram.com/_daniel__pedroza_/" target='_blank'>
                 <img src="icons/enlaceExterno.svg" alt="enlace externo" /> Instagram
               </a>
             </span>
             <span className="contact__item">
-              <a className="contact__link" href="#">
+              <a className="contact__link" href="https://sketchfab.com/DCDRAK0" target='_blank'>
                 <img src="icons/enlaceExterno.svg" alt="enlace externo" /> Sketchfab
               </a>
             </span>
-          </span>
+          </span> 
         </article>
 
       </section>

@@ -19,7 +19,7 @@
 .social {
     width          : 181px;
     display        : flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap            : 10%;
 
 }
@@ -28,7 +28,6 @@
     color          : #FFFFFF;
     text-decoration: none;
     font-size      : 15px;
-    width          : 160px;
     text-align     : center;
 
 }
