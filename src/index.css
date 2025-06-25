@@ -1,26 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-:root{
-  --paddingLateral: 0 6.25%;
+:root {
+  /* VARIABLES GENERAL*/
+  --mainFont      : "Montserrat", serif;
+  --mainColor     : #ffffff;
+  --bg-Color-body : #232323;
+  --bg-Colore-Btn1: #383838;
+  --bg-Colore-Btn2: #1F1E1E;
+  --bg-Colore-Btn3: #FEFEFE;
+  --ico-Color-Btn1: #ffffff;
+  --ico-Color-Btn2: #232323;
 
-  --primaryColor:#ffffff;
+  --bg-Color-Content: rgba(75, 75, 75, 0.2);
 
-  --primaryfont:"Montserrat", serif;
 
-  --paragraphSize:calc(1rem + 5px);
-  --titleSize:calc(3rem + 5px);
+  /* VARIABLES MOBILE*/
+  --paddingMobileLateral: 0 25px;
+  --fontSizeTitle-M     : 55px;
+  --fontSizeSubTitle-M  : 15px;
+  --fontSizeParagraph-M : 14px;
+  --fontSizeH2-M        : 20px;
+  --fontSizeH3-M        : 18px;
+  --padding-Content-M   : 32px 20px;
+
+
+  --fontSizeTitleSecction-M     : 21px;
+
+  /* VARIABLES DESKTOP*/
+  --paddingDesktopLateral: 0 80px;
+  --fontSizeSubTitle-D   : 21px;
+  --fontSizeTitle-D      : 128px;
+  --fontSizeParagraph-D  : 18px;
+  --fontSizeBtn-D        : 16px;
+  --fontSizeH2-D         : 24px;
+  --fontSizeH3-D        : 20px;
+
+
+  --fontSizeTitleSecction-D     : 32px;
+
 }
 
 * {
   margin     : 0;
   padding    : 0;
   box-sizing : border-box;
-  font-family: var(--primaryfont);
-  color: var(--primaryColor);
+  font-family: var(--mainFont);
+  color      : var(--mainColor);
 }
 
 body {
-  background: linear-gradient(to bottom right, #0B0B0B 12%, #131314);
-  height    : 100vh;
+  background: var(--bg-Color-body);
 }

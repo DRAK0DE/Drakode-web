@@ -1,0 +1,65 @@
+.talkBtn__message {
+    text-decoration: none;
+    background-color: var(--bg-Colore-Btn1);
+    border-radius   : 100px;
+    border          : none;
+    padding         : 10px 11px;
+    margin-top      : 39px;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    gap             : 10px;
+    font-weight     : 600;
+    font-size       : var(--fontSizeParagraph-M);
+    position        : relative;
+    left            : 50%;
+    transform       : translate(-50%);
+    width           : 133px;
+    height          : 40px;
+}
+
+
+.talkBtn__message:hover {
+    cursor          : pointer;
+    background-color: var(--mainColor);
+    color           : var(--bg-Colore-Btn1);
+}
+
+.talkBtn__message:hover path {
+    color: var(--bg-Colore-Btn1);
+}
+
+.talkBtn__message:active {
+    cursor          : pointer;
+    background-color: var(--mainColor);
+    color           : var(--bg-Colore-Btn1);
+}
+
+.talkBtn__message:active path {
+    color: var(--bg-Colore-Btn1);
+}
+
+.talkBtn__icon {
+    height: 12px;
+}
+
+.talkBtn__icon path {
+    color: var(--mainColor);
+}
+
+/* Versión desktop */
+@media screen and (min-width: 1200px) {
+
+    .talkBtn__message {
+        left     : 100%;
+        transform: translate(-100%);
+        font-size: var(--fontSizeBtn-D);
+        width    : 196px;
+        height   : 52px;
+        gap      : 23px;
+    }
+
+    .talkBtn__icon {
+        height: 22px;
+    }
+}

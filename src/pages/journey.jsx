@@ -3,7 +3,7 @@ import '../styles/Journey/journey.css'
 export default function Journey() {
     return (
         <div id="journey" className="journey">
-            <h1 className="journey__title">CARRERA</h1>
+            {/* <h1 className="journey__title">CARRERA</h1>
 
             <section className="journey__info">
                 <div className="journey__column journey__column--left">
@@ -26,7 +26,7 @@ export default function Journey() {
                     <p className="journey__item">2017 - SENA Técnico en logística empresarial</p>
                     <p className="journey__item">2024 - Universidad Sergio Arboleda Bootcamp Análisis y ciencia de Datos</p>
                 </div>
-            </section>
+            </section> */}
         </div>
     );
 }

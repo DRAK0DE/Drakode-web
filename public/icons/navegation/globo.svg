@@ -1,24 +1,10 @@
-import "../styles/components/footer.css";
-export default function Footer() {
-  return (
-    <footer id="footer">
-      <div class="footer__options info">
-        <p class="info__option option">
-          <svg
-            version="1.0"
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 100.000000 100.000000"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <g
-              transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)"
-              fill="currentColor"
-              stroke="none"
-            >
-              <path
-                d="M425 960 c-128 -20 -251 -100 -318 -207 -49 -79 -69 -151 -69 -253 0
+
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+ width="100.000000pt" height="100.000000pt" viewBox="0 0 100.000000 100.000000"
+ preserveAspectRatio="xMidYMid meet">
+<g transform="translate(0.000000,100.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M425 960 c-128 -20 -251 -100 -318 -207 -49 -79 -69 -151 -69 -253 0
 -136 41 -239 132 -330 207 -207 569 -168 723 77 49 79 69 151 69 253 0 136
 -41 239 -132 330 -102 102 -260 153 -405 130z m55 -140 l0 -90 -47 1 c-27 1
 -58 4 -70 7 l-22 7 25 50 c24 49 84 115 104 115 6 0 10 -36 10 -90z m95 58
@@ -41,14 +27,6 @@ c19 -18 45 -55 59 -83 29 -59 25 -63 -61 -64 l-53 -1 0 90 c0 54 4 90 10 90 6
 -7 -25 -50 c-24 -49 -84 -115 -104 -115 -6 0 -10 36 -10 90 l0 90 48 -1 c26
 -1 57 -4 69 -7z m-311 -88 c17 -35 27 -64 23 -64 -13 0 -133 85 -136 97 -4 11
 39 31 67 32 9 0 28 -27 46 -65z m433 55 c18 -6 30 -16 28 -23 -3 -11 -123 -96
--136 -96 -12 0 53 129 65 129 6 1 25 -4 43 -10z"
-              />
-            </g>
-          </svg>
-          Bogotá DC - CO
-        </p>
-        <p class="info__option option">Copyright © DRAKODE </p>
-      </div>
-    </footer>
-  );
-}
+-136 -96 -12 0 53 129 65 129 6 1 25 -4 43 -10z"/>
+</g>
+</svg>

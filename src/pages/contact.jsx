@@ -4,7 +4,7 @@ export default function Contact() {
   return (
     <div id="contact">
 
-      <h1 className="contact__title">CONTACTO</h1>
+      {/* <h1 className="contact__title">CONTACTO</h1>
 
       <hr className='contact__hr'/>
 
@@ -47,7 +47,7 @@ export default function Contact() {
           </span> 
         </article>
 
-      </section>
+      </section> */}
 
     </div>
   );

@@ -1,143 +1,440 @@
-import '../styles/Projects/projects.css'
+import { useState } from "react";
+
+import Button from "../components/button";
+
+import "../styles/Projects/projects.css";
 
 export default function Projects() {
-    return (
-        <div id="projects">
-            <section className="projects__content">
+  const projects = [
+    {
+      id: 1,
+      nombre: "Multiservicios R&B",
+      activo: true,
+      imagen: "/images/Proyectos/Multiservicio.png",
+      description: "",
+      date: "Mayo - 2025",
+      technologies: [
+        {
+          name: "React",
+          icon: (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="18"
+              viewBox="0 0 20 18"
+              fill="none"
+            >
+              <path
+                d="M9.99998 10.9047C11.0519 10.9047 11.9047 10.0519 11.9047 8.99998C11.9047 7.94801 11.0519 7.09521 9.99998 7.09521C8.94801 7.09521 8.09521 7.94801 8.09521 8.99998C8.09521 10.0519 8.94801 10.9047 9.99998 10.9047Z"
+                fill="currentColor"
+              />
+              <path
+                d="M9.99988 13.2858C15.2597 13.2858 19.5237 11.367 19.5237 9.00007C19.5237 6.63314 15.2597 4.71436 9.99988 4.71436C4.74003 4.71436 0.476074 6.63314 0.476074 9.00007C0.476074 11.367 4.74003 13.2858 9.99988 13.2858Z"
+                stroke="currentColor"
+              />
+              <path
+                d="M6.28829 11.143C8.91822 15.6981 12.7119 18.4314 14.7617 17.248C16.8116 16.0645 16.3413 11.4124 13.7114 6.85724C11.0814 2.30207 7.28775 -0.431235 5.23793 0.752232C3.1881 1.9357 3.65837 6.58778 6.28829 11.143Z"
+                stroke="currentColor"
+              />
+              <path
+                d="M6.28841 6.85717C3.65848 11.4123 3.18822 16.0644 5.23804 17.2479C7.28787 18.4314 11.0816 15.698 13.7115 11.1429C16.3414 6.58771 16.8117 1.93563 14.7619 0.752162C12.712 -0.431305 8.91834 2.302 6.28841 6.85717Z"
+                stroke="currentColor"
+              />
+            </svg>
+          ),
+        },
+        {
+          name: "HTML",
+          icon: (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.8722 0.140965C19.7809 0.0509513 19.6496 0 19.5127 0H0.487322C0.350366 0 0.219118 0.0509513 0.127814 0.140965C0.0346082 0.230978 -0.0110435 0.351563 0.00227171 0.473845L1.71611 17.6155C1.73323 17.7955 1.87399 17.945 2.06801 17.9959L9.86495 19.983C9.90679 19.9949 9.95245 20 9.9981 20C10.0437 20 10.0875 19.9949 10.1312 19.983L17.9339 17.9959C18.1279 17.945 18.2668 17.7955 18.2858 17.6155L19.9977 0.473845C20.011 0.351563 19.9654 0.230978 19.8722 0.140965ZM15.7692 6.05129H6.60846L6.8272 8.26427H15.5486L14.8942 14.8047L9.9962 16.126L9.94864 16.1124L5.10766 14.803L4.84326 12.1382H7.21524L7.31796 13.1726L10.0247 13.6787L12.682 13.1726L12.9655 10.3736H4.66636L4.02153 3.93682H15.9804L15.7692 6.05129Z"
+                fill="currentColor"
+              />
+            </svg>
+          ),
+        },
+        {
+          name: "CSS",
+          icon: (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M20 0L18.2353 17.8947L10 20L1.76471 17.8947L0 0H20ZM5.17693 11.5789H7.52987L7.58732 12.8947L10 13.6308L12.4127 12.8947L12.5873 10.5263H7.41268L7.2932 8.42105H12.7068L12.8814 6.31579H4.76563L4.5887 4.21053H15.3539L15.0597 8.42105L14.6461 14.4737L10 15.8429L5.35386 14.4737L5.17693 11.5789Z"
+                fill="currentColor"
+              />
+            </svg>
+          ),
+        },
+      ],
+    },
+    {
+      id: 2,
+      nombre: "Remodelarco",
+      activo: false,
+      imagen: "/images/Proyectos/Remodelarco.png",
+      description: "",
+      date: "Abril - 2025",
+      technologies: [
+        {
+          name: "Javascript",
+          icon: (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.7314 0H1.27046C0.569197 0 0 0.569197 0 1.27046V18.7295C0 19.4308 0.569197 20 1.27046 20H18.7295C19.4308 20 20 19.4308 20 18.7314V1.27046C20 0.569197 19.4308 0 18.7314 0ZM10.9524 15.3255C10.9524 17.2284 9.83631 18.0952 8.20685 18.0952C6.73363 18.0952 5.6715 17.1075 5.2381 16.1905L6.73549 15.2846C7.02381 15.7961 7.4628 16.1905 8.09524 16.1905C8.69978 16.1905 9.04762 15.9542 9.04762 15.0353V9.04762H10.9524V15.3255ZM15.0837 18.0952C13.3966 18.0952 12.4386 17.2452 11.9048 16.1905L13.3333 15.2381C13.7221 15.8743 14.1462 16.4825 15.0428 16.4825C15.7961 16.4825 16.1905 16.1068 16.1905 15.5859C16.1905 14.9647 15.7812 14.7433 14.9535 14.3806L14.4996 14.1853C13.1882 13.6272 12.3158 12.9278 12.3158 11.4472C12.3158 10.0856 13.3557 9.04762 14.9777 9.04762C16.1328 9.04762 16.9624 9.4494 17.5614 10.5022L16.1477 11.4118C15.8352 10.8519 15.5004 10.6324 14.9777 10.6324C14.4457 10.6324 14.109 10.971 14.109 11.4118C14.109 11.9568 14.4457 12.1763 15.2251 12.5149L15.6789 12.7102C17.2247 13.3705 18.0952 14.0458 18.0952 15.5636C18.0952 17.1987 16.8099 18.0952 15.0837 18.0952Z"
+                fill="currentColor"
+              />
+            </svg>
+          ),
+        },
+        {
+          name: "HTML",
+          icon: (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.8722 0.140965C19.7809 0.0509513 19.6496 0 19.5127 0H0.487322C0.350366 0 0.219118 0.0509513 0.127814 0.140965C0.0346082 0.230978 -0.0110435 0.351563 0.00227171 0.473845L1.71611 17.6155C1.73323 17.7955 1.87399 17.945 2.06801 17.9959L9.86495 19.983C9.90679 19.9949 9.95245 20 9.9981 20C10.0437 20 10.0875 19.9949 10.1312 19.983L17.9339 17.9959C18.1279 17.945 18.2668 17.7955 18.2858 17.6155L19.9977 0.473845C20.011 0.351563 19.9654 0.230978 19.8722 0.140965ZM15.7692 6.05129H6.60846L6.8272 8.26427H15.5486L14.8942 14.8047L9.9962 16.126L9.94864 16.1124L5.10766 14.803L4.84326 12.1382H7.21524L7.31796 13.1726L10.0247 13.6787L12.682 13.1726L12.9655 10.3736H4.66636L4.02153 3.93682H15.9804L15.7692 6.05129Z"
+                fill="currentColor"
+              />
+            </svg>
+          ),
+        },
+        {
+          name: "CSS",
+          icon: (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M20 0L18.2353 17.8947L10 20L1.76471 17.8947L0 0H20ZM5.17693 11.5789H7.52987L7.58732 12.8947L10 13.6308L12.4127 12.8947L12.5873 10.5263H7.41268L7.2932 8.42105H12.7068L12.8814 6.31579H4.76563L4.5887 4.21053H15.3539L15.0597 8.42105L14.6461 14.4737L10 15.8429L5.35386 14.4737L5.17693 11.5789Z"
+                fill="currentColor"
+              />
+            </svg>
+          ),
+        },
+      ],
+    },
+    {
+      id: 3,
+      nombre: "FusePong",
+      activo: false,
+      imagen: "/images/Proyectos/FusePong.png",
+      description: "",
+      date: "Enero - 2025",
+      technologies: [
+        {
+          name: "Node JS",
+          icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+              <path
+                fill="currentColor"
+                d="M24.007,45.419c-0.574,0-1.143-0.15-1.646-0.44l-5.24-3.103c-0.783-0.438-0.401-0.593-0.143-0.682	c1.044-0.365,1.255-0.448,2.369-1.081c0.117-0.067,0.27-0.043,0.39,0.028l4.026,2.389c0.145,0.079,0.352,0.079,0.486,0l15.697-9.061	c0.145-0.083,0.24-0.251,0.24-0.424V14.932c0-0.181-0.094-0.342-0.243-0.432L24.253,5.446c-0.145-0.086-0.338-0.086-0.483,0	L8.082,14.499c-0.152,0.086-0.249,0.255-0.249,0.428v18.114c0,0.173,0.094,0.338,0.244,0.42l4.299,2.483	c2.334,1.167,3.76-0.208,3.76-1.591V16.476c0-0.255,0.2-0.452,0.456-0.452h1.988c0.248,0,0.452,0.196,0.452,0.452v17.886	c0,3.112-1.697,4.9-4.648,4.9c-0.908,0-1.623,0-3.619-0.982l-4.118-2.373C5.629,35.317,5,34.216,5,33.042V14.928	c0-1.179,0.629-2.279,1.646-2.861L22.36,3.002c0.994-0.562,2.314-0.562,3.301,0l15.694,9.069C42.367,12.656,43,13.753,43,14.932	v18.114c0,1.175-0.633,2.271-1.646,2.861L25.66,44.971c-0.503,0.291-1.073,0.44-1.654,0.44"
+              />
+              <path
+                fill="currentColor"
+                d="M28.856,32.937c-6.868,0-8.308-3.153-8.308-5.797c0-0.251,0.203-0.452,0.455-0.452h2.028	c0.224,0,0.413,0.163,0.448,0.384c0.306,2.066,1.218,3.108,5.371,3.108c3.308,0,4.715-0.747,4.715-2.502	c0-1.01-0.401-1.76-5.54-2.263c-4.299-0.424-6.955-1.371-6.955-4.809c0-3.167,2.672-5.053,7.147-5.053	c5.026,0,7.517,1.745,7.831,5.493c0.012,0.13-0.035,0.255-0.122,0.35c-0.086,0.09-0.208,0.145-0.334,0.145h-2.039	c-0.212,0-0.397-0.149-0.44-0.354c-0.491-2.173-1.678-2.868-4.904-2.868c-3.611,0-4.031,1.257-4.031,2.2	c0,1.143,0.495,1.477,5.367,2.122c4.825,0.64,7.116,1.544,7.116,4.935c0,3.418-2.853,5.379-7.827,5.379"
+              />
+            </svg>
+          ),
+        },
+        {
+          name: "React",
+          icon: (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="18"
+              viewBox="0 0 20 18"
+              fill="none"
+            >
+              <path
+                d="M9.99998 10.9047C11.0519 10.9047 11.9047 10.0519 11.9047 8.99998C11.9047 7.94801 11.0519 7.09521 9.99998 7.09521C8.94801 7.09521 8.09521 7.94801 8.09521 8.99998C8.09521 10.0519 8.94801 10.9047 9.99998 10.9047Z"
+                fill="currentColor"
+              />
+              <path
+                d="M9.99988 13.2858C15.2597 13.2858 19.5237 11.367 19.5237 9.00007C19.5237 6.63314 15.2597 4.71436 9.99988 4.71436C4.74003 4.71436 0.476074 6.63314 0.476074 9.00007C0.476074 11.367 4.74003 13.2858 9.99988 13.2858Z"
+                stroke="currentColor"
+              />
+              <path
+                d="M6.28829 11.143C8.91822 15.6981 12.7119 18.4314 14.7617 17.248C16.8116 16.0645 16.3413 11.4124 13.7114 6.85724C11.0814 2.30207 7.28775 -0.431235 5.23793 0.752232C3.1881 1.9357 3.65837 6.58778 6.28829 11.143Z"
+                stroke="currentColor"
+              />
+              <path
+                d="M6.28841 6.85717C3.65848 11.4123 3.18822 16.0644 5.23804 17.2479C7.28787 18.4314 11.0816 15.698 13.7115 11.1429C16.3414 6.58771 16.8117 1.93563 14.7619 0.752162C12.712 -0.431305 8.91834 2.302 6.28841 6.85717Z"
+                stroke="currentColor"
+              />
+            </svg>
+          ),
+        },
+        {
+          name: "HTML",
+          icon: (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.8722 0.140965C19.7809 0.0509513 19.6496 0 19.5127 0H0.487322C0.350366 0 0.219118 0.0509513 0.127814 0.140965C0.0346082 0.230978 -0.0110435 0.351563 0.00227171 0.473845L1.71611 17.6155C1.73323 17.7955 1.87399 17.945 2.06801 17.9959L9.86495 19.983C9.90679 19.9949 9.95245 20 9.9981 20C10.0437 20 10.0875 19.9949 10.1312 19.983L17.9339 17.9959C18.1279 17.945 18.2668 17.7955 18.2858 17.6155L19.9977 0.473845C20.011 0.351563 19.9654 0.230978 19.8722 0.140965ZM15.7692 6.05129H6.60846L6.8272 8.26427H15.5486L14.8942 14.8047L9.9962 16.126L9.94864 16.1124L5.10766 14.803L4.84326 12.1382H7.21524L7.31796 13.1726L10.0247 13.6787L12.682 13.1726L12.9655 10.3736H4.66636L4.02153 3.93682H15.9804L15.7692 6.05129Z"
+                fill="currentColor"
+              />
+            </svg>
+          ),
+        },
+        {
+          name: "CSS",
+          icon: (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M20 0L18.2353 17.8947L10 20L1.76471 17.8947L0 0H20ZM5.17693 11.5789H7.52987L7.58732 12.8947L10 13.6308L12.4127 12.8947L12.5873 10.5263H7.41268L7.2932 8.42105H12.7068L12.8814 6.31579H4.76563L4.5887 4.21053H15.3539L15.0597 8.42105L14.6461 14.4737L10 15.8429L5.35386 14.4737L5.17693 11.5789Z"
+                fill="currentColor"
+              />
+            </svg>
+          ),
+        },
+      ],
+    },
+    {
+      id: 4,
+      nombre: "Mitosis",
+      activo: false,
+      imagen: "/images/Proyectos/Mitosis.png",
+      description: "",
+      date: "Noviembre - 2024",
+      technologies: [
+        {
+          name: "Javascript",
+          icon: (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.7314 0H1.27046C0.569197 0 0 0.569197 0 1.27046V18.7295C0 19.4308 0.569197 20 1.27046 20H18.7295C19.4308 20 20 19.4308 20 18.7314V1.27046C20 0.569197 19.4308 0 18.7314 0ZM10.9524 15.3255C10.9524 17.2284 9.83631 18.0952 8.20685 18.0952C6.73363 18.0952 5.6715 17.1075 5.2381 16.1905L6.73549 15.2846C7.02381 15.7961 7.4628 16.1905 8.09524 16.1905C8.69978 16.1905 9.04762 15.9542 9.04762 15.0353V9.04762H10.9524V15.3255ZM15.0837 18.0952C13.3966 18.0952 12.4386 17.2452 11.9048 16.1905L13.3333 15.2381C13.7221 15.8743 14.1462 16.4825 15.0428 16.4825C15.7961 16.4825 16.1905 16.1068 16.1905 15.5859C16.1905 14.9647 15.7812 14.7433 14.9535 14.3806L14.4996 14.1853C13.1882 13.6272 12.3158 12.9278 12.3158 11.4472C12.3158 10.0856 13.3557 9.04762 14.9777 9.04762C16.1328 9.04762 16.9624 9.4494 17.5614 10.5022L16.1477 11.4118C15.8352 10.8519 15.5004 10.6324 14.9777 10.6324C14.4457 10.6324 14.109 10.971 14.109 11.4118C14.109 11.9568 14.4457 12.1763 15.2251 12.5149L15.6789 12.7102C17.2247 13.3705 18.0952 14.0458 18.0952 15.5636C18.0952 17.1987 16.8099 18.0952 15.0837 18.0952Z"
+                fill="currentColor"
+              />
+            </svg>
+          ),
+        },
+        {
+          name: "HTML",
+          icon: (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.8722 0.140965C19.7809 0.0509513 19.6496 0 19.5127 0H0.487322C0.350366 0 0.219118 0.0509513 0.127814 0.140965C0.0346082 0.230978 -0.0110435 0.351563 0.00227171 0.473845L1.71611 17.6155C1.73323 17.7955 1.87399 17.945 2.06801 17.9959L9.86495 19.983C9.90679 19.9949 9.95245 20 9.9981 20C10.0437 20 10.0875 19.9949 10.1312 19.983L17.9339 17.9959C18.1279 17.945 18.2668 17.7955 18.2858 17.6155L19.9977 0.473845C20.011 0.351563 19.9654 0.230978 19.8722 0.140965ZM15.7692 6.05129H6.60846L6.8272 8.26427H15.5486L14.8942 14.8047L9.9962 16.126L9.94864 16.1124L5.10766 14.803L4.84326 12.1382H7.21524L7.31796 13.1726L10.0247 13.6787L12.682 13.1726L12.9655 10.3736H4.66636L4.02153 3.93682H15.9804L15.7692 6.05129Z"
+                fill="currentColor"
+              />
+            </svg>
+          ),
+        },
+        {
+          name: "CSS",
+          icon: (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M20 0L18.2353 17.8947L10 20L1.76471 17.8947L0 0H20ZM5.17693 11.5789H7.52987L7.58732 12.8947L10 13.6308L12.4127 12.8947L12.5873 10.5263H7.41268L7.2932 8.42105H12.7068L12.8814 6.31579H4.76563L4.5887 4.21053H15.3539L15.0597 8.42105L14.6461 14.4737L10 15.8429L5.35386 14.4737L5.17693 11.5789Z"
+                fill="currentColor"
+              />
+            </svg>
+          ),
+        },
+      ],
+    },
+    {
+      id: 5,
+      nombre: "Basketball",
+      activo: false,
+      imagen: "/images/Proyectos/Basketball.png",
+      description: "",
+      date: "Octubre - 2025",
+      technologies: [
+        {
+          name: "HTML",
+          icon: (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.8722 0.140965C19.7809 0.0509513 19.6496 0 19.5127 0H0.487322C0.350366 0 0.219118 0.0509513 0.127814 0.140965C0.0346082 0.230978 -0.0110435 0.351563 0.00227171 0.473845L1.71611 17.6155C1.73323 17.7955 1.87399 17.945 2.06801 17.9959L9.86495 19.983C9.90679 19.9949 9.95245 20 9.9981 20C10.0437 20 10.0875 19.9949 10.1312 19.983L17.9339 17.9959C18.1279 17.945 18.2668 17.7955 18.2858 17.6155L19.9977 0.473845C20.011 0.351563 19.9654 0.230978 19.8722 0.140965ZM15.7692 6.05129H6.60846L6.8272 8.26427H15.5486L14.8942 14.8047L9.9962 16.126L9.94864 16.1124L5.10766 14.803L4.84326 12.1382H7.21524L7.31796 13.1726L10.0247 13.6787L12.682 13.1726L12.9655 10.3736H4.66636L4.02153 3.93682H15.9804L15.7692 6.05129Z"
+                fill="currentColor"
+              />
+            </svg>
+          ),
+        },
+        {
+          name: "CSS",
+          icon: (
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M20 0L18.2353 17.8947L10 20L1.76471 17.8947L0 0H20ZM5.17693 11.5789H7.52987L7.58732 12.8947L10 13.6308L12.4127 12.8947L12.5873 10.5263H7.41268L7.2932 8.42105H12.7068L12.8814 6.31579H4.76563L4.5887 4.21053H15.3539L15.0597 8.42105L14.6461 14.4737L10 15.8429L5.35386 14.4737L5.17693 11.5789Z"
+                fill="currentColor"
+              />
+            </svg>
+          ),
+        },
+      ],
+    },
+  ];
 
+  const [selectedProject, setSelectedProject] = useState(projects[0]);
 
-                <span className="projects__item">
-                    <span className="projects__image-wrapper">
-                        <a href="https://multiserviciorb.com/" className="projects__link" target="_blank">
-                            <img className="projects__img" src="images/Proyectos/multiservicios.png" alt="proyecto-1" />
-                        </a>
-                    </span>
-                    <div className="projects__veil"></div>
-                    <span className="projects__tools">
-                        <img src="/icons/skills/HTML.svg" alt="icon-logo" className="projects__tool-icon" />
-                        <img src="/icons/skills/CSS.svg" alt="icon-logo" className="projects__tool-icon" />
-                        <img src="/icons/skills/REACT.svg" alt="icon-logo" className="projects__tool-icon" />
-                    </span>
-                </span>
+  const handleSelectChange = (e) => {
+    const selectedId = parseInt(e.target.value);
+    const found = projects.find((p) => p.id === selectedId);
+    setSelectedProject(found);
+  };
 
-                <span className="projects__item">
-                    <span className="projects__image-wrapper">
-                        <a href="https://projectcontrol-rho.vercel.app/" className="projects__link" target="_blank">
-                            <img className="projects__img" src="images/Proyectos/image2.png" alt="proyecto-1" />
-                        </a>
-                    </span>
-                    <div className="projects__veil"></div>
-                    <span className="projects__tools">
-                        <img src="/icons/skills/HTML.svg" alt="icon-logo" className="projects__tool-icon" />
-                        <img src="/icons/skills/CSS.svg" alt="icon-logo" className="projects__tool-icon" />
-                        <img src="/icons/skills/REACT.svg" alt="icon-logo" className="projects__tool-icon" />
-                        <img src="/icons/skills/NODE JS.svg" alt="icon-logo" className="projects__tool-icon" />
-                    </span>
-                </span>
+  const handleProjectClick = (project) => {
+    setSelectedProject(project);
+  };
 
-  
-                <span className="projects__item">
-                    <span className="projects__image-wrapper">
-                        <a href="https://dcdrako.github.io/Mitosis/" className="projects__link" target="_blank">
-                            <img src="images/Proyectos/Mitosis.png" alt="proyecto-2" className="projects__img" />
-                        </a>
-                    </span>
-                    <div className="projects__veil"></div>
-                    <span className="projects__tools">
-                        <img src="/icons/skills/HTML.svg" alt="icon-logo" className="projects__tool-icon" />
-                        <img src="/icons/skills/CSS.svg" alt="icon-logo" className="projects__tool-icon" />
-                        <img src="/icons/skills/JS.svg" alt="icon-logo" className="projects__tool-icon" />
-                    </span>
-                </span>
+  return (
+    <div id="projects">
+      <h1 className="projects__title">Proyectos</h1>
 
+      <div className="projects__content">
+        {/* SELECTOR */}
+        <select
+          className="projects__select"
+          value={selectedProject.id}
+          onChange={handleSelectChange}
+        >
+          {projects.map((p) => (
+            <option key={p.id} value={p.id}>
+              {p.nombre}
+            </option>
+          ))}
+        </select>
 
-                <span className="projects__item">
-                    <span className="projects__image-wrapper">
-                        <a href="https://dcdrako.github.io/Basketball/" className="projects__link" target="_blank">
-                            <img src="images/Proyectos/Basketball.png" alt="proyecto-3" className="projects__img" />
-                        </a>
-                    </span>
-                    <div className="projects__veil"></div>
-                    <span className="projects__tools">
-                        <img src="/icons/skills/HTML.svg" alt="icon-logo" className="projects__tool-icon" />
-                        <img src="/icons/skills/CSS.svg" alt="icon-logo" className="projects__tool-icon" />
-                        <img src="/icons/skills/JS.svg" alt="icon-logo" className="projects__tool-icon" />
-                    </span>
-                </span>
+        {/* LISTA */}
+        <ul className="projects__list">
+          {projects.map((p) => (
+            <li
+              key={p.id}
+              className={p.id === selectedProject.id ? "activo" : "inactivo"}
+              onClick={() => handleProjectClick(p)}
+            >
+              <svg width="11" height="10" viewBox="0 0 11 10" fill="none">
+                <path
+                  d="M3.6119 7.91671L3.02856 7.33337L5.3619 5.00004L3.02856 2.66671L3.6119 2.08337L5.94523 4.41671L8.27856 2.08337L8.8619 2.66671L6.52856 5.00004L8.8619 7.33337L8.27856 7.91671L5.94523 5.58337L3.6119 7.91671Z"
+                  fill="currentColor"
+                />
+              </svg>
+              {p.nombre}
+            </li>
+          ))}
+        </ul>
 
+        {/* CONTENIDO DEL PROYECTO SELECCIONADO */}
+        <div className="projects__image">
+          <a href="#">
+            <img
+              className="projects__image-active"
+              src={selectedProject.imagen}
+              alt={selectedProject.nombre}
+            />
 
-                <span className="projects__item">
-                    <span className="projects__image-wrapper">
-                        <a href="#" className="projects__link" target="_blank">
-                            <img src="images/Proyectos/comingsoon.jpg" alt="proyecto-5" className="projects__img" />
-                        </a>
-                    </span>
-                    <span className="projects__tools"></span>
-                </span>
+            {/* Descripcion*/}
+            {selectedProject.description && (
+              <div className="projects__description">
+                <p>{selectedProject.description}</p>
+              </div>
+            )}
+          </a>
 
-                <span className="projects__item">
-                    <span className="projects__image-wrapper">
-                        <a href="#" className="projects__link" target="_blank">
-                            <img src="images/Proyectos/comingsoon.jpg" alt="proyecto-6" className="projects__img" />
-                        </a>
-                    </span>
-                    <span className="projects__tools"></span>
-                </span>
+          {/* Date */}
+          {selectedProject.date && (
+            <div className="projects__date">
+              <h3>Fecha del proyecto:</h3>
+              <p>{selectedProject.date}</p>
+            </div>
+          )}
 
-                <span className="projects__item">
-                    <span className="projects__image-wrapper">
-                        <a href="#" className="projects__link" target="_blank">
-                            <img src="images/Proyectos/comingsoon.jpg" alt="proyecto-7" className="projects__img" />
-                        </a>
-                    </span>
-                    <span className="projects__tools"></span>
-                </span>
-
-                <span className="projects__item">
-                    <span className="projects__image-wrapper">
-                        <a href="#" className="projects__link" target="_blank">
-                            <img src="images/Proyectos/comingsoon.jpg" alt="proyecto-8" className="projects__img" />
-                        </a>
-                    </span>
-                    <span className="projects__tools"></span>
-                </span>
-
-                <span className="projects__item">
-                    <span className="projects__image-wrapper">
-                        <a href="#" className="projects__link" target="_blank">
-                            <img src="images/Proyectos/comingsoon.jpg" alt="proyecto-9" className="projects__img" />
-                        </a>
-                    </span>
-                    <span className="projects__tools"></span>
-                </span>
-
-                <span className="projects__item">
-                    <span className="projects__image-wrapper">
-                        <a href="#" className="projects__link" target="_blank">
-                            <img src="images/Proyectos/comingsoon.jpg" alt="proyecto-10" className="projects__img" />
-                        </a>
-                    </span>
-                    <span className="projects__tools"></span>
-                </span>
-
-                <span className="projects__item">
-                    <span className="projects__image-wrapper">
-                        <a href="#" className="projects__link" target="_blank">
-                            <img src="images/Proyectos/comingsoon.jpg" alt="proyecto-11" className="projects__img" />
-                        </a>
-                    </span>
-                    <span className="projects__tools"></span>
-                </span>
-                <span className="projects__item">
-                    <span className="projects__image-wrapper">
-                        <a href="#" className="projects__link" target="_blank">
-                            <img src="images/Proyectos/comingsoon.jpg" alt="proyecto-12" className="projects__img" />
-                        </a>
-                    </span>
-                    <span className="projects__tools"></span>
-                </span>
-
-            </section>
+          {/* Tecnologías */}
+          {selectedProject.technologies?.length > 0 && (
+            <div className="projects__technologies">
+              <h3>Tecnologías:</h3>
+              <div className="projects__tech-buttons">
+                {selectedProject.technologies?.map((tech, index) => (
+                  <Button key={index}>
+                    {tech.icon}
+                    {tech.name}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-    );
+      </div>
+    </div>
+  );
 }

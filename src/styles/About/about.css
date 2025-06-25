@@ -1,0 +1,249 @@
+#about {
+
+    padding       : var(--paddingMobileLateral);
+    display       : flex;
+    flex-direction: column;
+    gap           : 40px;
+}
+
+.about__categorie {
+    background-color: var(--bg-Color-Content);
+    padding         : var(--padding-Content-M);
+    border-radius   : 20px;
+    display         : flex;
+    flex-direction  : column;
+    justify-content : space-between;
+    gap             : 15px;
+    align-items     : center;
+
+}
+
+.about__categorie-contentTitle {
+    display    : flex;
+    align-items: center;
+    gap        : 10px;
+    width      : 100%;
+}
+
+.about__categorie-contentTitle svg {
+    height: 16px;
+}
+
+.about__categorie-title {
+    font-size  : var(--fontSizeH2-M);
+    font-weight: 500;
+}
+
+.about__categorie-contentDescription {
+    font-size: var(--fontSizeParagraph-M);
+}
+
+.about__categorie-contentBtn {
+    margin-top: 17px;
+}
+
+
+
+/*Certificados*/
+
+.about__categorie-certificate {
+    width         : 100%;
+    display       : flex;
+    flex-direction: column;
+    gap           : 12px;
+}
+
+.certificate__option {
+    width: 100%;
+}
+
+.certificate__title {
+    display        : flex;
+    justify-content: space-between;
+    font-size      : var(--fontSizeSubTitle-M);
+    font-weight    : 600;
+}
+
+.certificate__paragraph {
+    font-size  : var(--fontSizeParagraph-M);
+    font-weight: 300;
+}
+
+/*------------------------------Animacion Certificados--------------------------------*/
+
+.paragraph-container {
+    max-height: 0;
+    overflow  : hidden;
+    transition: opacity 0.5s ease;
+    opacity   : 0;
+    width     : 95%;
+}
+.paragraph-container.show {
+    max-height: 200px;
+    opacity   : 1;
+}
+
+.certificate__icon svg {
+    transition: transform 0.3s ease;
+}
+
+.certificate__icon.closed svg {
+    transform: rotate(45deg);
+}
+
+.certificate__icon.open svg {
+    transform: rotate(0deg);
+}
+
+.certificate__title {
+    transition: color 0.3s ease;
+    cursor    : pointer;
+}
+
+.certificate__title.active {
+    color: var(--mainColor);
+}
+
+.certificate__title.inactive {
+    color      : #c8c8c8;
+    font-weight: 300;
+}
+
+
+/*--------------------------------------------------------------*/
+
+/*Abilities*/
+
+.about__habilitiesContent-habilities {
+    display  : flex;
+    width    : 100%;
+    flex-wrap: wrap;
+    gap      : 15px 10px;
+    margin-bottom: 30px;
+}
+
+.about__categorie-contact {
+    display  : flex;
+    width    : 100%;
+    flex-wrap: wrap;
+    gap      : 15px 10px;
+}
+
+
+.about__habilitiesContent-title {
+    font-weight  : 600;
+    font-size    : var(--fontSizeH3-M);
+    margin-bottom: 13px;
+}
+
+
+.about__name {
+    position       : relative;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    gap            : 15px;
+    margin         : 70px 0;
+}
+
+.about__btn {
+    margin-top: 0;
+    left      : 0%;
+    transform : translate(0%);
+}
+
+
+@media screen and (min-width: 1200px) {
+    #about {
+        padding        : var(--paddingDesktopLateral);
+        flex-direction : row;
+        flex-wrap      : wrap;
+        width          : 100%;
+        gap            : 85px 60px;
+        justify-content: center;
+    }
+
+    /*Cajas*/
+    .about__categorie-contentTitle svg {
+        height: 25px;
+    }
+
+    .about__categorie-title {
+        font-size  : var(--fontSizeH2-D);
+        font-weight: 500;
+    }
+
+
+    /*Individual*/
+
+    /*Fortalezas*/
+
+    .about__strength {
+        max-width : 823px;
+        max-height: 283px;
+    }
+
+    /*Certificados*/
+
+    .about__certificate {
+        max-width: 372px;
+        height   : 283px;
+    }
+
+    .certificate__option {
+        width: 100%;
+    }
+
+    .certificate__title {
+        display        : flex;
+        justify-content: space-between;
+        font-size      : var(--fontSizeSubTitle-M);
+        font-weight    : 600;
+    }
+
+    .certificate__paragraph {
+        font-size  : var(--fontSizeParagraph-M);
+        font-weight: 300;
+    }
+
+
+    /*Habilidades*/
+    .about__abilities {
+        width     : 823px;
+        max-height: 283px;
+    }
+
+    .about__habilitiesContentTotal {
+        display        : flex;
+        justify-content: space-between;
+        width          : 99%;
+        
+    }
+    .about__habilitiesContent:first-child {
+        width: 270px;
+    }
+
+    .about__habilitiesContent:nth-child(2) {
+        width: 213px;
+    }
+
+    .about__habilitiesContent:last-child {
+        width: 200px;
+    }
+
+    .about__habilitiesContent-title {
+        font-weight  : 500;
+        font-size    : var(--fontSizeH3-D);
+        margin-bottom: 13px;
+    }
+
+    .about__socialNetworks {
+        max-width : 372px;
+        max-height: 283px;
+    }
+
+    .about__name {
+        gap: 25px;
+    }
+}

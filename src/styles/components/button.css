@@ -1,0 +1,51 @@
+.button {
+    background-color: var(--bg-Colore-Btn2);
+    font-size       : var(--fontSizeParagraph-M);
+    border          : none;
+    border-radius   : 100px;
+    font-weight     : 500;
+    display         : flex;
+    justify-content : start;
+    align-items     : center;
+    gap             : 10px;
+    box-shadow      : 0 4px 4px rgba(0, 0, 0, 0.5);
+    padding         : 8px 15px;
+    text-decoration : none;
+    min-width       : 120px;
+    width: fit-content;
+}
+
+.button svg {
+    height: 16px;
+}
+
+.button:hover {
+    cursor          : pointer;
+    background-color: var(--bg-Colore-Btn3);
+    box-shadow      : 0 1px 1px rgba(253, 253, 253, 0.5);
+    color           : var(--bg-Colore-Btn1);
+}
+
+.button:hover p {
+    color: var(--bg-Colore-Btn1);
+}
+
+.button path {
+    color: var(--ico-Color-Btn1);
+}
+
+.button:hover path {
+    color: var(--ico-Color-Btn2);
+}
+
+.button .path-2 {
+    color: var(--ico-Color-Btn2);
+}
+
+.button:hover .path-2 {
+    color: var(--ico-Color-Btn1);
+}
+
+/* @media screen and (min-width: 1200px){
+    
+} */
