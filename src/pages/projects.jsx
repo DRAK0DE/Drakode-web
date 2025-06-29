@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Button from "../components/button";
+import Tech from "../components/tech-info";
 
 import "../styles/Projects/projects.css";
 
@@ -12,6 +12,7 @@ export default function Projects() {
       activo: true,
       imagen: "/images/Proyectos/Multiservicio.png",
       description: "",
+      web: "https://multiserviciorb.com/",
       date: "Mayo - 2025",
       technologies: [
         {
@@ -87,6 +88,7 @@ export default function Projects() {
       activo: false,
       imagen: "/images/Proyectos/Remodelarco.png",
       description: "",
+      web: "https://remodelarco.com/",
       date: "Abril - 2025",
       technologies: [
         {
@@ -150,6 +152,7 @@ export default function Projects() {
       activo: false,
       imagen: "/images/Proyectos/FusePong.png",
       description: "",
+      web: "https://projectcontrol-rho.vercel.app/",
       date: "Enero - 2025",
       technologies: [
         {
@@ -240,6 +243,7 @@ export default function Projects() {
       activo: false,
       imagen: "/images/Proyectos/Mitosis.png",
       description: "",
+      web: "https://dcdrako.github.io/Mitosis/",
       date: "Noviembre - 2024",
       technologies: [
         {
@@ -303,6 +307,7 @@ export default function Projects() {
       activo: false,
       imagen: "/images/Proyectos/Basketball.png",
       description: "",
+      web: "https://dcdrako.github.io/Basketball/",
       date: "Octubre - 2025",
       technologies: [
         {
@@ -396,7 +401,11 @@ export default function Projects() {
 
         {/* CONTENIDO DEL PROYECTO SELECCIONADO */}
         <div className="projects__image">
-          <a href="#">
+          <a
+            href={selectedProject.web}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img
               className="projects__image-active"
               src={selectedProject.imagen}
@@ -411,28 +420,30 @@ export default function Projects() {
             )}
           </a>
 
-          {/* Date */}
-          {selectedProject.date && (
-            <div className="projects__date">
-              <h3>Fecha del proyecto:</h3>
-              <p>{selectedProject.date}</p>
-            </div>
-          )}
-
-          {/* Tecnologías */}
-          {selectedProject.technologies?.length > 0 && (
-            <div className="projects__technologies">
-              <h3>Tecnologías:</h3>
-              <div className="projects__tech-buttons">
-                {selectedProject.technologies?.map((tech, index) => (
-                  <Button key={index}>
-                    {tech.icon}
-                    {tech.name}
-                  </Button>
-                ))}
+          <div className="projects__info">
+            {/* Date */}
+            {selectedProject.date && (
+              <div className="projects__date">
+                <h3>Fecha:</h3>
+                <p>{selectedProject.date}</p>
               </div>
-            </div>
-          )}
+            )}
+
+            {/* Tecnologías */}
+            {selectedProject.technologies?.length > 0 && (
+              <div className="projects__technologies">
+                <h3>Tecnologías:</h3>
+                <div className="projects__tech-buttons">
+                  {selectedProject.technologies?.map((tech, index) => (
+                    <Tech key={index}>
+                      {tech.icon}
+                      {tech.name}
+                    </Tech>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

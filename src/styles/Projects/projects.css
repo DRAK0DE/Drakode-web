@@ -1,5 +1,5 @@
 #projects {
-    padding: var(--paddingMobileLateral);
+    padding      : var(--paddingMobileLateral);
     margin-bottom: 40px;
 }
 
@@ -44,21 +44,46 @@ option {
     text-decoration: none;
 }
 
+
+
 .projects__technologies,
 .projects__date {
     display       : flex;
     flex-direction: column;
-
-    gap    : 10px;
-    padding: 15px;
+    gap           : 10px;
+    padding       : 15px;
+    justify-content: center;
 }
+
+
+.projects__date h3,
+.projects__date p {
+    font-size  : var(--fontSizeParagraph-M);
+    font-weight: 400;
+}
+
+.projects__technologies h3,
+.projects__technologies p {
+    font-size  : var(--fontSizeParagraph-M);
+    font-weight: 400;
+}
+
+
 
 .projects__tech-buttons {
-    display: flex;
-    width: 100%;
+    display  : flex;
+    width    : 100%;
     flex-wrap: wrap;
-    gap    : 8px 20px;
+    gap      : 8px 20px;
 }
+
+.projects__info {
+    background-color: rgb(38, 42, 40);
+    text-align: left;
+    padding: 0;
+
+}
+
 
 @media screen and (min-width: 1200px) {
     #projects {
@@ -124,11 +149,11 @@ option {
 
     .projects__technologies,
     .projects__date {
-        display    : flex;
-        gap        : 10px;
-        align-items: center;
+        display       : flex;
+        gap           : 10px;
+        align-items   : center;
         flex-direction: row;
-        padding    : 15px;
+        padding       : 15px;
     }
 
     .projects__tech-buttons {
@@ -145,4 +170,19 @@ option {
         bottom  : 30%;
         left    : 15%;
     }
+
+    .projects__info {
+        display         : flex;
+        background-color: aquamarine;
+
+    }
+
+    .projects__technologies,
+    .projects__date {
+        display       : flex;
+        flex-direction: row;
+        gap           : 10px;
+        padding       : 15px;
+    }
+
 }
