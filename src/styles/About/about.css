@@ -78,6 +78,7 @@
     opacity   : 0;
     width     : 95%;
 }
+
 .paragraph-container.show {
     max-height: 200px;
     opacity   : 1;
@@ -97,7 +98,11 @@
 
 .certificate__title {
     transition: color 0.3s ease;
-    cursor    : pointer;
+}
+
+.certificate__title:hover {
+    cursor: pointer;
+    background-color: var(--ico-Color-Btn2);
 }
 
 .certificate__title.active {
@@ -115,10 +120,10 @@
 /*Abilities*/
 
 .about__habilitiesContent-habilities {
-    display  : flex;
-    width    : 100%;
-    flex-wrap: wrap;
-    gap      : 15px 10px;
+    display      : flex;
+    width        : 100%;
+    flex-wrap    : wrap;
+    gap          : 15px 10px;
     margin-bottom: 30px;
 }
 
@@ -218,8 +223,9 @@
         display        : flex;
         justify-content: space-between;
         width          : 99%;
-        
+
     }
+
     .about__habilitiesContent:first-child {
         width: 270px;
     }

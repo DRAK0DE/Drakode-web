@@ -15,16 +15,8 @@ createRoot(document.getElementById("root")).render(
     <Router>
       <Navbar></Navbar>
       <Home></Home>
-      
-      
-
       <Projects></Projects>
       <About></About>
-      {/* <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/about' element={<Journey/>}/>
-        <Route path='/projects' element={<Projects/>}/>
-      </Routes>  */}
       <Footer></Footer>
     </Router>
   </StrictMode>

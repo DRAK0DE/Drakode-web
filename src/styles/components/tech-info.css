@@ -1,12 +1,14 @@
 .tech {
-    font-size       : var(--fontSizeParagraph-M);
-    border          : none;
-    border-radius   : 100px;
-    font-weight     : 500;
-    display         : flex;
-    justify-content : start;
-    align-items     : center;
-    gap             : 10px;
-    padding         : 8px 15px;
-    width           : fit-content;
+    font-size      : var(--fontSizeParagraph-M);
+    border         : none;
+    border-radius  : 100px;
+    font-weight    : 500;
+    display        : flex;
+    justify-content: start;
+    align-items    : center;
+    gap            : 10px;
+    padding        : 8px 15px;
+    width          : fit-content;
+    font-size      : 12px;
+    font-weight    : 200;
 }

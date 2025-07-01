@@ -31,6 +31,15 @@ export default function About() {
         "Curso realizado ITGlobers para el desarrollo de E-commerce en VTEX IO 2025",
     },
   ];
+
+  const handleDescargarCV = () => {
+    const link = document.createElement("a");
+    link.href = "/documents/CV_DP_Frontend.pdf"; // debe coincidir exactamente
+    link.download = "CV_DP_Frontend.pdf";
+    document.body.appendChild(link); // opcional pero seguro en algunos navegadores
+    link.click();
+    document.body.removeChild(link); // limpia el DOM
+  };
   return (
     <div id="about">
       {/*----------------------------------------Fortalezas----------------------------------------*/}
@@ -60,7 +69,7 @@ export default function About() {
         </span>
 
         <span className="about__categorie-contentBtn">
-          <Button>
+          <button onClick={handleDescargarCV} className="button">
             <svg
               width="16"
               height="16"
@@ -71,13 +80,12 @@ export default function About() {
               <path
                 d="M14 10V12.6667C14 13.0203 13.8595 13.3594 13.6095 13.6095C13.3594 13.8595 13.0203 14 12.6667 14H3.33333C2.97971 14 2.64057 13.8595 2.39052 13.6095C2.14048 13.3594 2 13.0203 2 12.6667V10M4.66667 6.66667L8 10M8 10L11.3333 6.66667M8 10V2"
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
-
             <p>Descargar CV</p>
-          </Button>
+          </button>
         </span>
       </div>
 
